@@ -1,0 +1,31 @@
+<view class="detail-wrapper" style="background: {{colors[productId]}}" wx:if="{{productId}}">
+	<!-- <image class="activity-bg" src="https://xiaohuioss.oss-cn-beijing.aliyuncs.com/IMG_5565.JPG" mode="widthFix"></image> -->
+	<image class="activity-bg" src="./../../images/bg-{{productId}}.jpg" mode="widthFix"></image>
+	<!-- <image class="activity-bg" src="http://qrmkt.oss-cn-beijing.aliyuncs.com/common/jihe/hx/bg-{{productId}}.jpg" mode="widthFix"></image> -->
+	<image class="activity-btn" src="./../../images/btn-{{productId}}.png" mode="widthFix" bindtap="onActClick"></image>
+	<view class="tips-wrapper">
+		<view class="tips" bindtap="showModal">
+			<image src="./../../images/btn-rules.png" />
+			<!-- <text>活动规则</text> -->
+		</view>
+		<view class="tips tips1" bindtap="onTips1Click" wx:if="{{showOfflineEntry}}">
+			<image src="./../../images/btn-chance.png" />
+			<!-- <text>兑奖机会</text> -->
+		</view>
+	</view>
+</view>
+
+<view class="cover"  wx:if="{{showModal}}"></view>
+<view class="rules-modal" wx:if="{{showModal}}">
+	<image src="./../../images/rules-bg.png" class="content-bg"></image>
+	<view class="content">
+		<view>1、活动时间：2020年9月21日—2020年9月30日；</view>
+		<view>2、用户通过活动界面点击扫码探秘选项，对荷花系列7大产品进行扫码，扫码成功后，以卡片形式展示产品文化特点等，点击抽奖后，进行转盘抽奖，每人每日可进行5次扫码；</view>
+		<view>
+			3、在指定城市（石家庄、成都、广州），参与活动的消费者，在线上转盘抽奖后，随机获得线下门店领奖的机会（每市30个终端核销点），通过系统提供的零售户信息列表，可至线下门店扫码核销，获得两包装品吸礼盒。填写个人收货信息和地址。奖品将在活动结束后，统一发放。活动期间，每个ID仅可在线下领取一次奖励。同时，用户在店面购买荷花系列产品，扫描店内二维码可得额外奖励，每天每个ID线下扫码仅可得一次额外奖励。
+		</view>
+		<view>4、零售户信息将以列表形式在活动界面进行展示，展示信息包括店面名称，店面地址，联系电话。用户依据所给定的零售户地址信息，至线下门店扫码核销。</view>
+		<view>5、用户线下扫码核销领奖的时间为9月25日——9月27日的8：00—20:00</view>
+	</view>
+	<image src="./../../images/close.png" class="close" wx:if="{{showModal}}" bindtap="onModalClose"></image>
+</view>

@@ -1,0 +1,19 @@
+<camera binderror="onError" frame-size="small" resolution="low" flash="{{lightStatus === 'on' ? 'torch' : 'off'}}"
+  binderror="onCameraError" bindinitdone="onCameraDone">
+</camera>
+
+<cover-view class="tips-box">
+  <cover-image src="./../../images/scan.gif" wx:if="{{showGuide}}" class="img-display"></cover-image>
+
+  <cover-view class="scan-tips" wx:if="{{showGuide}}">将目标对准到屏幕中间3秒以上等待自动识别完成</cover-view>
+  <!-- <cover-view class="scan-tips scan-tips1" wx:if="{{showGuide}}"></cover-view> -->
+</cover-view>
+
+<!-- <cover-view class="tips" wx:if="{{showGuide}}">{{tips[tipsIndex]}}</cover-view> -->
+
+<canvas canvas-id="myCanvas" disable-scroll="{{true}}"></canvas>
+
+<cover-view wx:if="{{isDark || lightStatus == 'on'}}" class="light-btn {{lightStatus == 'on' ? 'active' : ''}}"
+  bindtap="onLightClick">
+  <cover-image src="./../../images/light-{{lightStatus}}.png" class="light-img"></cover-image>
+</cover-view>

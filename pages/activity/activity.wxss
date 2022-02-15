@@ -1,0 +1,106 @@
+.detail-wrapper {
+  /* position: fixed;
+  left: 0; */
+
+  background: white;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.activity-bg {
+  width: 100%;
+}
+
+.activity-btn {
+  position: absolute;
+  width: 70%;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 1150rpx;
+}
+.tips-wrapper{
+  position: fixed;
+  top: 1034rpx;
+  text-align: center;
+  width: 100%;
+}
+.tips {
+  display: inline-block;
+  width: 222rpx;
+  height: 70rpx;
+  position: relative;
+  /* top: 1044rpx;
+  transform: translateX(-50%);
+  left: 35%; */
+}
+.tips1{
+  margin-left: 40rpx;
+}
+.tips image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.tips text {
+  font-size: 24rpx;
+  color: #f8dab8;
+  position: absolute;
+  transform: translate(-50%, -20%);
+  top: 20%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.rules-modal{
+  position: fixed;
+  transform: translate(-60%, -50%);
+  top: 50%;
+  left: 60%;
+  width: 640rpx;
+  height: 772rpx;
+}
+.rules-modal .content-bg{
+  width: 100%;
+  height: 100%;
+}
+.cover{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .7);
+}
+.content{
+  position: absolute;
+  width: 72%;
+  top: 180rpx;
+  overflow: auto;
+  height: 520rpx;
+  font-size: 24rpx;
+  color: #B02409;
+  box-sizing: border-box;
+  transform: translateX(-45%);
+  left: 45%;
+  text-align: justify;
+  line-height: 2;
+}
+.content view{
+  margin-top: 15rpx;
+}
+
+.close{
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  /* top: 1104rpx; */
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: -135rpx;
+}

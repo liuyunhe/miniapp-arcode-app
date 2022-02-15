@@ -1,0 +1,2 @@
+<web-view src="{{url}}" binderror="onWebviewError"></web-view>
+<!-- <web-view src="http://hbz.qrmkt.cn/orgmenu/auth?menuCode=personInfo" binderror="onWebviewError"></web-view> -->

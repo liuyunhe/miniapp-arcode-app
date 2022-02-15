@@ -1,0 +1,144 @@
+page {
+  background: #ac2715;
+}
+
+.result-page {
+  height: 1334rpx;
+  overflow-y: auto;
+}
+
+.bg {
+  width: 100%;
+  height: 1334rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.title {
+  width: 492rpx;
+}
+
+.data-view {
+  height: 660rpx;
+  width: 100%;
+  position: absolute;
+  overflow-y: hidden;
+  top: 600rpx;
+  box-sizing: border-box;
+}
+
+.switch-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 538rpx;
+}
+
+.switch-bar .switch-item {
+  display: inline-flex;
+  text-align: center;
+  /* padding: 10rpx 30rpx; */
+  border-radius: 50rpx;
+  position: relative;
+  width: 160rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  padding-top: 12rpx;
+  margin-left: 12rpx;
+  line-height: 1;
+}
+.switch-bar .switch-item:first-child{
+  margin-left: 0;
+}
+
+.switch-bar .switch-item image {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 160rpx;
+}
+
+.switch-bar .switch-item text {
+  color: #E59119;
+  margin: auto;
+}
+.switch-bar .switch-item.active text {
+  color: #F9DBB6;
+  margin: auto;
+}
+
+
+.data-table {
+  width: 552rpx;
+  height: 96%;
+  margin: 20rpx auto;
+  border: 1px solid #E59119;
+  border-radius: 8rpx;
+  overflow: auto;
+  padding-bottom: 54rpx;
+  /* position: relative; */
+  box-sizing: border-box;
+}
+
+.table-body {
+  padding: 0rpx 20rpx;
+  padding-top: 54rpx;
+  padding-bottom: 24rpx;
+
+  /* overflow-y: auto; */
+}
+
+.table-row {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #B02409;
+}
+
+.table-row:last-child {
+  border: none;
+}
+
+.table-title {
+  font-weight: bold;
+  color: #B02409;
+  text-align: center;
+  background: #B02409;
+  color: #F9DBB6;
+  position: absolute;
+  width: 548rpx;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+}
+
+.table-title .table-grid {
+  font-size: 24rpx !important;
+  color: #F9DBB6 !important;
+  text-align: center !important;
+  padding: 10rpx 0rpx;
+  font-size: 20rpx;
+}
+
+.table-row .table-grid {
+  padding: 10rpx 5rpx;
+  font-size: 20rpx;
+  color: #B02409;
+  margin: auto;
+  text-align: left;
+}
+
+.table-row .table-grid.grid1 {
+  width: 30%;
+}
+
+.table-row .table-grid.grid2 {
+  width: 46%;
+}
+
+.table-row .table-grid.grid3 {
+  width: 24%;
+}

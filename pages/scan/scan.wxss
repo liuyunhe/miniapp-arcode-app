@@ -1,0 +1,87 @@
+page {
+  background-color: black;
+}
+
+canvas {
+  transform: translate(-10000px, 0);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+camera {
+  height: 100vh
+}
+
+.center {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+
+
+
+
+.light-btn{
+  position: fixed;
+  width: 50rpx;
+  height: 50rpx;
+  right: 50rpx;
+  bottom: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .6);
+  padding: 20rpx;
+  /* animation: shine 1.5s linear  infinite alternate; */
+}
+.light-btn.active{
+  background: rgba(rgba(199, 199, 199, 0.705));
+}
+.light-img{
+  width: 100%;
+  height: 100%;
+}
+.tips{
+  position: fixed;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 200rpx;
+  color: rgb(219, 219, 219);
+  /* background: rgba(0, 0, 0, .2); */
+  padding: 20rpx;
+  border-radius: 8rpx;
+}
+@keyframes shine{
+  from {opacity: .7;}
+  to {opacity: .2;}
+}
+
+
+.tips-box{
+  position: absolute;
+  width: 700rpx;
+  height: 1244rpx;
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  left: 50%;
+}
+
+.img-display {
+  width: 700rpx;
+  height: 1244rpx;
+}
+.scan-tips {
+  width: 450rpx;
+  line-height: 50rpx;
+  white-space: pre-wrap;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  color: white;
+  text-align: center;
+  bottom: 170rpx;
+}
