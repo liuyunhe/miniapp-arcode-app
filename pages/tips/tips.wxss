@@ -1,0 +1,51 @@
+/* page {
+  background: #ac2715;
+} */
+
+.result-page {
+  height: 1473rpx;
+  overflow-y: auto;
+}
+
+.bg {
+  width: 100%;
+  height: 1473rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.tips {
+  position: absolute;
+  width: 550rpx;
+  height: 160rpx;
+  top:421rpx;
+  left: 102rpx;
+}
+
+.tips text {
+  font-size: 28rpx;
+  color: #02318D;
+  line-height: 44rpx;
+}
+
+.yh {
+  width: 355rpx;
+  height: 421rpx;
+  position: absolute;
+  left: 195rpx;
+  top: 776rpx;
+}
+
+.btn {
+  width: 443rpx;
+  height: 119rpx;
+  position: absolute;
+  left: 158rpx;
+  top: 1320rpx;
+}
+
+
+
+  
