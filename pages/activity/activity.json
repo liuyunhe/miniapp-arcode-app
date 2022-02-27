@@ -2,5 +2,6 @@
   "usingComponents": {
   },
   "navigationStyle": "custom",
-  "disableScroll": true
+  "disableScroll": true,
+  "navigationBarTitleText": "详细信息"
 }

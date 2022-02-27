@@ -1,31 +1,29 @@
-<view class="detail-wrapper" style="background: {{colors[productId]}}" wx:if="{{productId}}">
-	<!-- <image class="activity-bg" src="https://xiaohuioss.oss-cn-beijing.aliyuncs.com/IMG_5565.JPG" mode="widthFix"></image> -->
-	<image class="activity-bg" src="./../../images/bg-{{productId}}.jpg" mode="widthFix"></image>
-	<!-- <image class="activity-bg" src="http://qrmkt.oss-cn-beijing.aliyuncs.com/common/jihe/hx/bg-{{productId}}.jpg" mode="widthFix"></image> -->
-	<image class="activity-btn" src="./../../images/btn-{{productId}}.png" mode="widthFix" bindtap="onActClick"></image>
-	<view class="tips-wrapper">
-		<view class="tips" bindtap="showModal">
-			<image src="./../../images/btn-rules.png" />
-			<!-- <text>活动规则</text> -->
+<view class="detail-wrapper" style="background: #7CBDFD">
+		<image class="activity-bg" src="./../../images/bg.png" mode="widthFix"></image>
+		<image class="activity-btn" src="./../../images/btn-act.png" mode="widthFix" bindtap="onActClick"></image>
+		<view class="tips" bindtap="showTips">
+				<image src="./../../images/btn-rules.png" />
 		</view>
-		<view class="tips tips1" bindtap="onTips1Click" wx:if="{{showOfflineEntry}}">
-			<image src="./../../images/btn-chance.png" />
-			<!-- <text>兑奖机会</text> -->
-		</view>
-	</view>
 </view>
-
-<view class="cover"  wx:if="{{showModal}}"></view>
+<view class="cover" wx:if="{{showModal}}"></view>
 <view class="rules-modal" wx:if="{{showModal}}">
-	<image src="./../../images/rules-bg.png" class="content-bg"></image>
-	<view class="content">
-		<view>1、活动时间：2020年9月21日—2020年9月30日；</view>
-		<view>2、用户通过活动界面点击扫码探秘选项，对荷花系列7大产品进行扫码，扫码成功后，以卡片形式展示产品文化特点等，点击抽奖后，进行转盘抽奖，每人每日可进行5次扫码；</view>
-		<view>
-			3、在指定城市（石家庄、成都、广州），参与活动的消费者，在线上转盘抽奖后，随机获得线下门店领奖的机会（每市30个终端核销点），通过系统提供的零售户信息列表，可至线下门店扫码核销，获得两包装品吸礼盒。填写个人收货信息和地址。奖品将在活动结束后，统一发放。活动期间，每个ID仅可在线下领取一次奖励。同时，用户在店面购买荷花系列产品，扫描店内二维码可得额外奖励，每天每个ID线下扫码仅可得一次额外奖励。
+		<image src="./../../images/poster-tips.png" class="poster-tips" />
+		<image src="{{ posterUrl }}" class="content-bg" show-menu-by-longpress="true"></image>
+		<view class="poster-text">长按保存到相册</view>
+		<image src="./../../images/close.png" class="close" wx:if="{{showModal}}" bindtap="onModalClose"></image>
+</view>
+<view class="cover" wx:if="{{showTips}}"></view>
+<view class="tips-modal" wx:if="{{showTips}}">
+		<image src="./../../images/rules-bg.png" class="content-bg"></image>
+		<view class="content">
+				<view>1、您从钻石e家公众号进入钻石会员社区点击“AR识钻石”入口，即可跳转至AR小程序内；</view>
+				<view>2、通过AR扫描识别指定规格烟包（请参照示例图打开产品，保持基于与示例图的样式一致），识别成功后，跳转产品图片并展示产品工艺特点等介绍；</view>
+				<view>3、您完成识别后会赠送产品宣传海报，长按保存图片发送朋友圈；</view>
+				<view>4、您再次进入AR识别程序内上传朋友圈宣传的截图通过审核，即可进行抽奖，奖励为一定数量的荷石璧；每周一个参与者有两次抽奖机会，请您认真参与；</view>
+				<view>5、根据依照国家法律法规的相关规定，在国家规定的法律范围内，本平台拥有活动的最终解释权，如您未满18岁，请勿参与此活动；</view>
+				<view>6、任何利用系统漏洞、外挂软件，或通过欺诈、舞弊、刷单等非法手段套取奖励的，我方有权取消奖励并保留依法追责的权利；</view>
+				<view>7、活动开展过程中我方有权在法律法规内根据活动的开展情况对奖励进行调整，包括但不限于提升奖励、降低奖励和停止奖励。具体奖励以我的礼品中的实际展示奖励为准。</view>
+				<view>8、钻石品牌规格中奖情况，请前往“钻石e家”公众号--本自在--个人中心--我的礼品中查看，是否中奖以此处显示为准。</view>
 		</view>
-		<view>4、零售户信息将以列表形式在活动界面进行展示，展示信息包括店面名称，店面地址，联系电话。用户依据所给定的零售户地址信息，至线下门店扫码核销。</view>
-		<view>5、用户线下扫码核销领奖的时间为9月25日——9月27日的8：00—20:00</view>
-	</view>
-	<image src="./../../images/close.png" class="close" wx:if="{{showModal}}" bindtap="onModalClose"></image>
+		<image src="./../../images/close.png" class="close" style="left:48%" wx:if="{{showTips}}" bindtap="onTipsClose"></image>
 </view>

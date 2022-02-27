@@ -1,15 +1,15 @@
 {
   "pages": [
-    "pages/activity/activity",
-    "pages/result/result",
     "pages/scan/scan",
+    "pages/tips/tips",
+    "pages/activity/activity",
     "pages/webview/webview"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "AR活动",
+    "navigationBarTitleText": "识冬运 抽好礼",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
