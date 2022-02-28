@@ -24,19 +24,10 @@ Page({
       this.setData({
         'posterUrl': app.__POSTER
       })
+      this.setData({
+        showModal: true
+      })
     }
-  },
-  onTips1Click() {
-    wx.login({
-      success: res => {
-        // 获取code
-        const {
-          code
-        } = res
-        this.setData({ code })
-        this.showModal()
-      }
-    })
   },
   showModal() {
     this.setData({
