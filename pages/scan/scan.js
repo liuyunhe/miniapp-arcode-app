@@ -348,7 +348,7 @@ Page({
                   wx.showModal({
                     showCancel: false,
                     title: '提示',
-                    content: '识别失败，请将烟盒正面对准相机!',
+                    content: '识别失败，请将产品开盖后对准相机!',
                     confirmText: '重新识别',
                     success: res => {
                       wx.reLaunch({
@@ -415,7 +415,7 @@ Page({
           wx.showModal({
             showCancel: false,
             title: '提示',
-            content: '识别失败，请将烟盒正面对准相机!',
+            content: '识别失败，请将产品开盖后对准相机!',
             confirmText: '重新识别',
             success: res => {
               wx.reLaunch({

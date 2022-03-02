@@ -65,7 +65,7 @@
   width: 130rpx;
   height: 52rpx;
   position: absolute;
-  top: 65rpx;
+  top: 120rpx;
   left: 25rpx;
   /* top: 1044rpx;
   transform: translateX(-50%);
