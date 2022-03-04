@@ -9,15 +9,15 @@
 <view class="rules-modal" wx:if="{{showModal}}">
 		<image src="./../../images/poster-tips.png" class="poster-tips" />
 		<image src="{{ posterUrl }}" class="content-bg" show-menu-by-longpress="true"></image>
-		<view class="poster-text">长按保存到相册</view>
-		<image src="./../../images/close.png" class="close" wx:if="{{showModal}}" bindtap="onModalClose"></image>
+		<view class="poster-text">—— 长按保存到相册 ——</view>
+		<image src="./../../images/close.png" class="close" style="left: 92%;top: -7%;transform: none;" wx:if="{{showModal}}" bindtap="onModalClose"></image>
 </view>
 <view class="cover" wx:if="{{showTips}}"></view>
 <view class="tips-modal" wx:if="{{showTips}}">
 		<image src="./../../images/rules-bg.png" class="content-bg"></image>
 		<view class="content">
 				<view>1、您从钻石e家公众号进入钻石会员社区点击“AR识钻石”入口，即可跳转至AR小程序内；</view>
-				<view>2、通过AR扫描识别指定规格烟包（请参照示例图打开产品，保持基于与示例图的样式一致），识别成功后，跳转产品图片并展示产品工艺特点等介绍；</view>
+				<view>2、通过AR扫描识别指定规格产品（请参照示例图打开产品，保持基于与示例图的样式一致），识别成功后，跳转产品图片并展示产品工艺特点等介绍；</view>
 				<view>3、您完成识别后会赠送产品宣传海报，长按保存图片发送朋友圈；</view>
 				<view>4、您再次进入AR识别程序内上传朋友圈宣传的截图通过审核，即可进行抽奖，奖励为一定数量的荷石璧；每周一个参与者有两次抽奖机会，请您认真参与；</view>
 				<view>5、根据依照国家法律法规的相关规定，在国家规定的法律范围内，本平台拥有活动的最终解释权，如您未满18岁，请勿参与此活动；</view>
