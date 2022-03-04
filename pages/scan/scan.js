@@ -1,9 +1,7 @@
 // miniprogram/pages/scan/scan.js
 
 import {
-  verifyImage,
-  arCodeCheck,
-  arImageSearch
+  arCodeCheck
 } from './../../service/index'
 import {
   AR_IMAGE_SEARCH
@@ -34,6 +32,7 @@ let isChecking = false;
 let isCameraError = false;
 const darkThreshold = 15;
 let scanTimes = 0;
+let imgError = 0;
 let scanThreshold = 3000;
 const scanRetryTimes = 2;
 Page({
@@ -55,7 +54,7 @@ Page({
    */
   onLoad: function (options) {
     this.disposeCamera();
-    this.calcTipsTop();
+    this.calcTipsTop();   // 计算屏幕宽高
     this.init();
   },
 
@@ -172,32 +171,11 @@ Page({
         real.info('获取授权信息，检查摄像头状态...');
         if (authSetting["scope.camera"]) {
           real.info('摄像头开启正常...');
-          this.getTicket().then(res => {
-            const {
-              code,
-              data
-            } = res;
-
-            if (code != '200') {
-              real.error('获取ticket失败', res);
-              return this.initError();
-            }
-            const {
-              ticket
-            } = data;
-            real.info('获取ticket成功：', ticket);
-            // 保存ticket
-            app.__TICKET = ticket;
-            real.info('初始化摄像头开始...');
-            this.initCamera();
-            wx.hideToast();
-            this.setData({
-              showGuide: true
-            })
-          }).catch(e => {
-            real.info('请求ticket接口错误', e);
-            wx.hideToast();
-            this.initError();
+          real.info('初始化摄像头开始...');
+          this.initCamera();
+          wx.hideToast();
+          this.setData({
+            showGuide: true
           })
         } else {
           real.info('没有授权相机');
@@ -301,7 +279,10 @@ Page({
   // 初始化相机
   initCamera() {
     real.info('初始化相机开始...');
-    listener && listener.stop();
+    if (listener) {
+      console.log(listener)
+      listener.stop();
+    }
     ctx = ctx || wx.createCameraContext();
     listener = listener || ctx.onCameraFrame(throttle(this.onFrame, scanThreshold).bind(this));
     listener.start();
@@ -311,7 +292,6 @@ Page({
   onFrame(frame) {
     real.info('关键帧监听成功...');
     scanTimes++;
-    // console.log(frame.data)
     if (isChecking) return;
     isChecking = true;
     let temp;
@@ -320,16 +300,19 @@ Page({
         real.info('关键帧转图片成功');
         const path = res;
         // temp = res.data;
-        const ticket = app.__TICKET
+        const token = wx.getStorageSync('token')
         return wx.uploadFile({
           filePath: path,
           name: 'img',
-          url: `${HOST[ENV]}${AR_IMAGE_SEARCH}?ticket=${ticket}`,
+          header: {
+            token
+          },
+          url: `${HOST[ENV]}${AR_IMAGE_SEARCH}`,
           success: res => {
-
             const result = JSON.parse(res.data);
             const {
               code,
+              msg,
               data
             } = result;
             if (code == 200) {
@@ -346,7 +329,7 @@ Page({
                * ]
                */
               // const pic = data && data.auctions || [];
-              const targetPic = data || {}
+              const targetPic = data.searchResult || {}
               const val = targetPic && targetPic.sortExprValues || '';
               const sortExpr = Number(val.split(';')[0] || '0');
               const isFail = sortExpr < imageThreshold || !sortExpr;
@@ -365,7 +348,7 @@ Page({
                   wx.showModal({
                     showCancel: false,
                     title: '提示',
-                    content: '识别失败，请将烟盒正面对准相机!',
+                    content: '识别失败，请将产品开盖后对准相机!',
                     confirmText: '重新识别',
                     success: res => {
                       wx.reLaunch({
@@ -382,10 +365,11 @@ Page({
               real.info('识别成功');
               listener.stop();
               isChecking = false;
+              app.__POSTER = data.poster
               this.playBgm().then(res => {
                 app.__CURRENT_PIC = targetPic;
                 wx.redirectTo({
-                  url: `/pages/activity/activity?productId=${targetPic.productId}`
+                  url: `/pages/activity/activity`
                 })
               })
             } else {
@@ -394,12 +378,18 @@ Page({
               isChecking = false;
               wx.showModal({
                 title: '提示',
-                content: '活动太火爆了，请稍后再试~',
+                content: msg,
                 showCancel: false,
                 success: (res) => {
-                  wx.reLaunch({
-                    url: '/pages/scan/scan',
-                  })
+                  if (msg.includes('结束')) {
+                    wx.reLaunch({
+                      url: '/pages/tips/tips',
+                    })
+                  } else {
+                    wx.reLaunch({
+                      url: '/pages/scan/scan',
+                    })
+                  }
                 }
               })
               listener.stop();
@@ -419,6 +409,21 @@ Page({
         real.error('图片转换失败', e);
         isChecking = false;
         console.error('图片转换失败=>', e)
+        imgError += 1
+        if (imgError == 5) {
+          listener.stop();
+          wx.showModal({
+            showCancel: false,
+            title: '提示',
+            content: '识别失败，请将产品开盖后对准相机!',
+            confirmText: '重新识别',
+            success: res => {
+              wx.reLaunch({
+                url: '/pages/scan/scan',
+              })
+            }
+          });
+        }
       })
     // listener.stop();
   },

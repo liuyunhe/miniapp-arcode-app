@@ -1,13 +1,12 @@
 import {
   AR_CODE_CHECK,
-  AR_IMAGE_SEARCH,
-  AR_OFFLINE_CHANGCE_QUERY
+  AR_OFFLINE_CHANGCE_QUERY,
+  AR_TOKEN
 } from './Api'
 import {
   get,
   post
 } from './request'
-
 
 export function arCodeCheck(data = {
   code: '',
@@ -18,17 +17,18 @@ export function arCodeCheck(data = {
     data
   })
 }
-export function arImageSearch(img, ticket) {
-  return post(AR_IMAGE_SEARCH + '?ticket=' + ticket, {
-    data: {
-      img
-    }
-  })
-}
+
 export function arOfflineChangceQuery(ticket) {
   return post(AR_OFFLINE_CHANGCE_QUERY, {
     data: {
       ticket
+    }
+  })
+}
+export function getToken(code) {
+  return post(AR_TOKEN, {
+    data: {
+      code
     }
   })
 }

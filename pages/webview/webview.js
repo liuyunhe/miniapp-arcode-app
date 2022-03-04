@@ -1,5 +1,5 @@
 // miniprogram/pages/webview/webview.js
-import {HOST, ENV} from './../../config'
+import { HOST, ENV } from './../../config'
 Page({
 
   /**
@@ -12,13 +12,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    const {
-      productId
-    } = options;
-    const ticket = getApp().__TICKET;
+  onLoad: function () {
     this.setData({
-      url: `${HOST[ENV + '_WEBVIEW']}/orgmenu/auth?menuCode=arActDraw&productId=${productId}&ticket=${ticket}`
+      url: `${HOST[ENV + '_WEBVIEW']}/orgmenu/auth?menuCode=hyrArUpload`
     })
   },
   onWebviewError(e) {

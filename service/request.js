@@ -6,6 +6,8 @@ const {
   request
 } = wx;
 
+const app = getApp()
+
 const processUrl = url => {
   return /^https?:\/\//.testurl ? url : HOST[ENV] + url;
 }
@@ -15,6 +17,9 @@ const _req = (method, url, configs = {}) => {
     const data = configs.data;
     const header = configs.headers || {};
     header['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+    if (!url.includes('/hbact/hyr/zsar/check')) {
+      header['token'] = wx.getStorageSync('token')
+    }
     console.log('request=>', url, data);
     request({
       url,

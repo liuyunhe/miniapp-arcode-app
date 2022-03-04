@@ -1,0 +1,8 @@
+<view class="result-page">
+  <image src="./../../images/tips-bg.png" class="bg" mode="widthFix"></image>
+  <view class="tips">
+    <text>打开产品后，放入识别框内，对准产品进行识别识别成功后，可了解产品相关信息，并有机会获得抽奖机会，获得荷石璧、鼓励奖实物等奖励。</text>
+  </view>
+  <image src="./../../images/tips-yh.png" class="yh" mode="widthFix" />
+  <image src="./../../images/tips-btn.png" class="btn" mode="widthFix" bindtap="onTabClick" />
+</view>
