@@ -1,4 +1,4 @@
-export const ENV = 'REMOTE_TEST'
+export const ENV = 'REMOTE_PROD'
 export const HOST = {
   REMOTE_TEST: "https://cs-yxc.qrmkt.cn",
   REMOTE_PROD: "https://yx.qrmkt.cn",
