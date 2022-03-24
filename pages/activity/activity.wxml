@@ -1,4 +1,4 @@
-<view class="detail-wrapper" style="background: #7CBDFD">
+<view class="detail-wrapper" style="background: #47AEF6">
 		<image class="activity-bg" src="./../../images/bg.png" mode="widthFix"></image>
 		<image class="activity-btn" src="./../../images/btn-act.png" mode="widthFix" bindtap="onActClick"></image>
 		<view class="tips" bindtap="showTips">
@@ -16,14 +16,23 @@
 <view class="tips-modal" wx:if="{{showTips}}">
 		<image src="./../../images/rules-bg.png" class="content-bg"></image>
 		<view class="content">
-				<view>1、您从钻石e家公众号进入钻石会员社区点击“AR识钻石”入口，即可跳转至AR小程序内；</view>
-				<view>2、通过AR扫描识别指定规格产品（请参照示例图打开产品，保持基于与示例图的样式一致），识别成功后，跳转产品图片并展示产品工艺特点等介绍；</view>
-				<view>3、您完成识别后会赠送产品宣传海报，长按保存图片发送朋友圈；</view>
-				<view>4、您再次进入AR识别程序内上传朋友圈宣传的截图通过审核，即可进行抽奖，奖励为一定数量的荷石璧；每周一个参与者有两次抽奖机会，请您认真参与；</view>
-				<view>5、根据依照国家法律法规的相关规定，在国家规定的法律范围内，本平台拥有活动的最终解释权，如您未满18岁，请勿参与此活动；</view>
+				<view>1、本期为钻石（冬韵）主题的AR识别寻宝活动，您将此规格打开盒包装，通过活动入口扫描进行识别参与活动；</view>
+				<view>2、成功完成识别后，您将获得AR寻宝第一阶段抽奖机会，有机会中取幸运好礼，此环节每周3次抽奖机会；</view>
+				<view>3、您可以选择继续参与第二阶段的寻宝活动，获得精美宣传海报，再退出程序将海报在好友圈为我们进行宣传；</view>
+				<view>4、您再次进入AR寻宝环节选择上传凭证，将您为我们产品宣传的截图上传后系统将自动进行审核；</view>
+				<view>5、上传后您即可点击马上抽奖，AR寻宝第二阶段每周有2次的抽奖机会，有机会中取超级好礼；请您如实参与，对于套取活动奖励的我们有权收回；</view>
 				<view>6、任何利用系统漏洞、外挂软件，或通过欺诈、舞弊、刷单等非法手段套取奖励的，我方有权取消奖励并保留依法追责的权利；</view>
-				<view>7、活动开展过程中我方有权在法律法规内根据活动的开展情况对奖励进行调整，包括但不限于提升奖励、降低奖励和停止奖励。具体奖励以我的礼品中的实际展示奖励为准。</view>
-				<view>8、钻石品牌规格中奖情况，请前往“钻石e家”公众号--本自在--个人中心--我的礼品中查看，是否中奖以此处显示为准。</view>
+				<view>7、同一设备、同一手机号、同一收货地址视为同一用户，针对同一用户套取多个实物奖励的，我方有权取消发货。</view>
+				<view>8、活动开展过程中我方有权在法律法规内根据活动的开展情况对奖励进行调整，包括但不限于提升奖励、降低奖励和停止奖励。具体奖励以我的礼品中的实际展示奖励为准。</view>
 		</view>
 		<image src="./../../images/close.png" class="close" style="left:48%" wx:if="{{showTips}}" bindtap="onTipsClose"></image>
+</view>
+<view class="cover" wx:if="{{showTC}}"></view>
+<view class="tc-modal" wx:if="{{showTC}}">
+		<image src="./../../images/tc-bg.png" class="content-bg"></image>
+		<view class="content">
+				<view>本周抽奖次数已用完，去参与AR寻宝活动第二阶段活动继续抽奖吧！</view>
+		</view>
+		<image src="./../../images/btn-jx.png" class="jx" bindtap="onJX"></image>
+		<image src="./../../images/btn-qx.png" class="qx" bindtap="onQX"></image>
 </view>

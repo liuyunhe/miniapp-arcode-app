@@ -1,0 +1,42 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/activity/activity",
+          "pathName": "pages/activity/activity",
+          "query": "",
+          "scene": 1001
+        },
+        {
+          "name": "pages/tips/tips",
+          "pathName": "pages/tips/tips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/scan/scan",
+          "pathName": "pages/scan/scan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/webview/webview",
+          "pathName": "pages/webview/webview",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
