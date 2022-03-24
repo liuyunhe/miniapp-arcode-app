@@ -22,17 +22,12 @@ App({
         })
       }
     })
-    let noFirst = wx.getStorageSync('noFirst')
-    if (noFirst !== '1') {
-      wx.navigateTo({
-        url: "pages/tips/tips"
-      })
-    }
   },
   onError: function (e) {
     real.error(e)
   },
   __TICKET: '',
-  __POSTER: '',
+  __HAS_ONE_STAGE_DRAW_CHANCE: false,
+  __RID: '',
   __CURRENT_PIC: undefined,
 })

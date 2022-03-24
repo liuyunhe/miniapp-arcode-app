@@ -8,9 +8,9 @@ Page({
     pic: null,
     showModal: false,
     showTips: false,
+    showTC: false,
     showOfflineEntry: false,
     code: '',
-    posterUrl: 'https://qrmkt.oss-cn-beijing.aliyuncs.com/common/memberDay/upload/poster.png'
   },
 
   /**
@@ -20,14 +20,7 @@ Page({
     this.initData(options);
   },
   initData() {
-    if (app.__POSTER) {
-      this.setData({
-        'posterUrl': app.__POSTER
-      })
-      this.setData({
-        showModal: true
-      })
-    }
+
   },
   showModal() {
     this.setData({
@@ -49,9 +42,32 @@ Page({
       showTips: false
     })
   },
-  onActClick() {
-    wx.navigateTo({
-      url: '/pages/webview/webview',
+  onTipsCloseTC() {
+    this.setData({
+      showTC: false
     })
   },
+  onActClick() {
+    if (app.__HAS_ONE_STAGE_DRAW_CHANCE) {
+      // 一阶段抽奖
+      wx.navigateTo({
+        url: '/pages/webview/webview?type=1',
+      })
+    } else {
+      this.setData({
+        showTC: true
+      })
+    }
+  },
+  onJX() {
+    wx.navigateTo({
+      url: '/pages/webview/webview?type=2',
+    })
+  },
+  onQX() {
+    this.onTipsCloseTC()
+    wx.reLaunch({
+      url: '/pages/tips/tips'
+    })
+  }
 });

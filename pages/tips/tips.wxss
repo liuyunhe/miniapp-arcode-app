@@ -1,15 +1,10 @@
-/* page {
-  background: #ac2715;
-} */
-
 .result-page {
-  height: 1473rpx;
-  overflow-y: auto;
+  height: 100vh;
 }
 
 .bg {
   width: 100%;
-  height: 1473rpx;
+  height: 1448rpx;
   position: absolute;
   left: 0;
   top: 0;
@@ -30,22 +25,58 @@
   line-height: 44rpx;
 }
 
-.yh {
-  width: 355rpx;
-  height: 421rpx;
+.gz {
+  width: 171rpx;
+  height: 65rpx;
   position: absolute;
-  left: 195rpx;
-  top: 776rpx;
+  right: 25rpx;
+  top: 15rpx;
 }
 
-.btn {
-  width: 443rpx;
-  height: 119rpx;
+.btn1 {
+  width: 291rpx;
+  height: 101rpx;
   position: absolute;
-  left: 158rpx;
-  top: 1320rpx;
+  left: 74rpx;
+  top: 1267rpx;
+}
+.btn2 {
+  width: 291rpx;
+  height: 101rpx;
+  position: absolute;
+  right: 74rpx;
+  top: 1267rpx;
 }
 
+.cover{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .7);
+}
+.close{
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  /* top: 1104rpx; */
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: -65rpx;
+}
+.tips-modal{
+  position: fixed;
+  transform: translate(-50%, -55%);
+  top: 50%;
+  left: 50%;
+  width: 610rpx;
+  height: 1116rpx;
+}
+.tips-modal .content-bg{
+  width: 100%;
+  height: 100%;
+}
 
 
   

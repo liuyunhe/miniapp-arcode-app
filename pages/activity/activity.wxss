@@ -4,12 +4,13 @@
 
   background: white;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-size: 0;
 }
 
 .activity-bg {
   width: 100%;
+  height: 1451rpx;
 }
 
 .product-bt {
@@ -49,11 +50,11 @@
 
 .activity-btn {
   position: absolute;
-  width: 459rpx;
-  height: 135rpx;
+  width: 651rpx;
+  height: 101rpx;
   transform: translateX(-50%);
   left: 50%;
-  top: 1150rpx;
+  top: 1169rpx;
 }
 .tips-wrapper {
   position: fixed;
@@ -62,11 +63,11 @@
   width: 100%;
 }
 .tips {
-  width: 130rpx;
+  width: 131rpx;
   height: 52rpx;
   position: absolute;
-  top: 120rpx;
-  left: 25rpx;
+  top: 15rpx;
+  right: 0rpx;
   /* top: 1044rpx;
   transform: translateX(-50%);
   left: 35%; */
@@ -130,6 +131,22 @@
   width: 610rpx;
   height: 854rpx;
 }
+.tc-modal{
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 659rpx;
+  height: 606rpx;
+}
+.tc-modal .content{
+  position: absolute;
+  height: 200rpx;
+  color: #fff;
+  font-size: 34rpx;
+  line-height: 1.5;
+  top: 160rpx;
+}
 .rules-modal .content-bg{
   width: 100%;
   height: 100%;
@@ -137,6 +154,10 @@
 }
 
 .tips-modal .content-bg{
+  width: 100%;
+  height: 100%;
+}
+.tc-modal .content-bg{
   width: 100%;
   height: 100%;
 }
@@ -157,4 +178,18 @@
   transform: translateX(-50%);
   left: 50%;
   bottom: -80rpx;
+}
+.jx{
+  position: absolute;
+  bottom: 65rpx;
+  width: 251rpx;
+  height: 99rpx;
+  left: 69rpx;
+}
+.qx{
+  position: absolute;
+  width: 251rpx;
+  height: 99rpx;
+  right: 69rpx;
+  bottom: 65rpx;
 }

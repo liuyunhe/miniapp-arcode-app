@@ -1,7 +1,5 @@
 {
   "usingComponents": {
   },
-  "navigationStyle": "custom",
-  "disableScroll": true,
-  "navigationBarTitleText": "详细信息"
+  "navigationBarTextStyle": "black"
 }

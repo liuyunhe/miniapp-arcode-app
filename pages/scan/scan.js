@@ -330,9 +330,9 @@ Page({
                */
               // const pic = data && data.auctions || [];
               const targetPic = data.searchResult || {}
-              const val = targetPic && targetPic.sortExprValues || '';
-              const sortExpr = Number(val.split(';')[0] || '0');
-              const isFail = sortExpr < imageThreshold || !sortExpr;
+              const isFail = !data.success
+              app.__HAS_ONE_STAGE_DRAW_CHANCE = data.hasOneStageDrawChance
+              app.__RID = data.rid
               if (isFail) {
                 real.error('图片识别失败, 第' + scanTimes + '次', targetPic);
                 isChecking = false;
@@ -365,7 +365,6 @@ Page({
               real.info('识别成功');
               listener.stop();
               isChecking = false;
-              app.__POSTER = data.poster
               this.playBgm().then(res => {
                 app.__CURRENT_PIC = targetPic;
                 wx.redirectTo({

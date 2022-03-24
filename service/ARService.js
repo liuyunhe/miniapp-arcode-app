@@ -1,7 +1,8 @@
 import {
   AR_CODE_CHECK,
   AR_OFFLINE_CHANGCE_QUERY,
-  AR_TOKEN
+  AR_TOKEN,
+  AR_POST_DRAW_CHANCE
 } from './Api'
 import {
   get,
@@ -30,5 +31,10 @@ export function getToken(code) {
     data: {
       code
     }
+  })
+}
+export function postDrawChance() {
+  return post(AR_POST_DRAW_CHANCE, {
+    data: {}
   })
 }
