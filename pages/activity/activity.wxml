@@ -1,5 +1,5 @@
 <view class="detail-wrapper" style="background: #47AEF6">
-		<image class="activity-bg" src="./../../images/bg.png" mode="widthFix"></image>
+		<image class="activity-bg" src="./../../images/bg1.png" mode="widthFix"></image>
 		<image class="activity-btn" src="./../../images/btn-act.png" mode="widthFix" bindtap="onActClick"></image>
 		<view class="tips" bindtap="showTips">
 				<image src="./../../images/btn-rules.png" />
