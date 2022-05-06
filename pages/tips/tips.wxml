@@ -1,11 +1,11 @@
 <view class="result-page">
-  <image src="./../../images/tips-bg.png" class="bg" mode="widthFix"></image>
+  <image src="./../../images/tips-bg.jpg" class="bg" mode="widthFix"></image>
   <image src="./../../images/tips-btn-gz.png" class="gz" mode="widthFix" bindtap="showTips" />
   <image src="./../../images/tips-btn.png" class="btn1" mode="widthFix" bindtap="onTabClick" />
   <image src="./../../images/tips-btn2.png" class="btn2" mode="widthFix" bindtap="onTabClick2" />
 </view>
 <view class="cover" wx:if="{{showTips}}"></view>
 <view class="tips-modal" wx:if="{{showTips}}">
-  <image src="./../../images/act-rules.png" class="content-bg"></image>
+  <image src="./../../images/act-rules.jpg" class="content-bg"></image>
   <image src="./../../images/close.png" class="close" style="left:48%" wx:if="{{showTips}}" bindtap="onTipsClose"></image>
 </view>
